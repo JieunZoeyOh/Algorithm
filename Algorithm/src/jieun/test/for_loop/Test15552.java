@@ -19,6 +19,6 @@ public class Test15552 {
 			bw.write("\n");
 		}
 		br.close();
-		bw.flush();
+		bw.flush(); bw.close();
 	}
 }
