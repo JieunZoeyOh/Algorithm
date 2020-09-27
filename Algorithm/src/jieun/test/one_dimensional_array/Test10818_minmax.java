@@ -1,5 +1,5 @@
 package jieun.test.one_dimensional_array;
-// ÃÖ¼Ú°ª°ú ÃÖ´ñ°ªÀ» Ã£´Â ¹®Á¦
+// ìµœì†Ÿê°’ê³¼ ìµœëŒ“ê°’ì„ ì°¾ëŠ” ë¬¸ì œ
 import java.io.*;
 public class Test10818_minmax {
 	public static void main(String[] args) throws Exception {
