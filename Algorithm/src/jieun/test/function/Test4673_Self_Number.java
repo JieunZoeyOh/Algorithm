@@ -8,19 +8,16 @@ public class Test4673_Self_Number {
 	public static void main(String[] args) throws IOException {
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		StringBuilder sb = new StringBuilder();
-		int[] array = new int[10000];
-		int count = 1;
-		while(true) {
-			int result = d(count);
-			if(result > 15000)  break;
-			
-			if(result <= 10000) {
-			 array[result - 1]++;
-			}
-			count++;
+		boolean[] array = new boolean[10000]; // default : false
+		
+		for(int i = 1; i < array.length; i++) {
+			int result = d(i);
+			if(result <= 10000)
+				array[result - 1] = true;
 		}
+		
 		for(int i = 0; i < array.length; i++) {
-			if(array[i] == 0)
+			if(!array[i])
 				sb.append(i+1+"\n");
 		}
 		bw.write(sb.toString());
@@ -28,14 +25,11 @@ public class Test4673_Self_Number {
 	}
 	
 	static int d(int input) {
-		int ramainder;
-		int sum = 0;
-		int num = input;
-		do {
-			ramainder = num % 10;
-			sum += ramainder;
-			num /= 10;
-		} while (num != 0);
-		return input + sum;
+		int sum = input;
+		while(input != 0) {
+			sum += input % 10;
+			input /= 10;
+		}
+		return sum;
 	}
 }
